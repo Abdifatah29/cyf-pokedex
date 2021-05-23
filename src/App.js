@@ -1,22 +1,20 @@
 import React from 'react';
-import HelloWorld from './Components/HelloWorld';
+import Logo from './Components/Logo';
+import BestPokemon from './Components/BestPokemon';
+import CaughtPokemon from './Components/CaughtPokemon';
+
+
+let styles = {
+  margin: "0 auto",
+  width: "fit-content"
+};
 
 function App() {
-    return <div>
-    <Logo />,
+    return <div className="container" style={styles}>
+    <Logo />
     <BestPokemon />
-    <HelloWorld />
+    <CaughtPokemon />
     </div>
 }
 
-const Logo = () => (
-    <header>
-        <h1>Welcome to the Pokedex</h1>
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png"/>
-    </header>
-);
-
-const BestPokemon = () => (
-    <p>My favorite Pokemon is Squirtle!</p>
-)
 export default App;

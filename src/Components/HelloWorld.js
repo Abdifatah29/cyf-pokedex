@@ -5,7 +5,7 @@ import Mentor from './Mentor';
 
 const HelloWorld = () => (
     <div>
-        <Greeting />,
+        <Greeting />
         <Mentor />
     </div>
 );
