@@ -3,6 +3,8 @@ import Logo from './Components/Logo';
 import BestPokemon from './Components/BestPokemon';
 import CaughtPokemon from './Components/CaughtPokemon';
 import Greeting from './Components/Greeting';
+import PokemonMoves from './Components/PokemonMoves';
+
 
 
 let styles = {
@@ -33,6 +35,7 @@ function App() {
     />
     <BestPokemon abilities = {abilities}/>
     <CaughtPokemon date = {date}/>
+    <PokemonMoves />
     <Greeting />
     </div>
 }
