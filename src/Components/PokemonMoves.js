@@ -11,7 +11,7 @@ import React, {useState, useEffect} from 'react';
         </ul>
     </div>;
 
-function PokemonMoves() {
+function PokemonMoves({pokemonId}) {
 
     const [pokemonData, setPokemonData] = useState(null);
 
@@ -19,21 +19,16 @@ function PokemonMoves() {
         console.log("Fetching data from NASA");
 
         fetch(
-        `https://pokeapi.co/api/v2/pokemon/1/`
+        `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`
         )
         .then((res) => res.json())
         .then((data) => {
             setPokemonData(data);
         });
-    }, []);
+    }, [pokemonId]);
 
-    // (pokemonData ? (<Moves pokemonData={pokemonData}/>) : (null));
+    return (<div>{pokemonData ? <Moves pokemonData={pokemonData} /> : null}</div>);
 
-    if (pokemonData) {
-       return (<Moves pokemonData={pokemonData}/>)
-    } else {
-        return null;
-    }
 }
 
 export default PokemonMoves;
