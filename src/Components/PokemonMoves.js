@@ -1,6 +1,16 @@
 
 import React, {useState, useEffect} from 'react';
 
+  const Moves = ({pokemonData}) =>
+    <div>
+        <p>{pokemonData.name}'s moves:</p>
+        <ul>
+            {
+                Object.keys(pokemonData.moves).map((move, key) => <li key={key}>{pokemonData.moves[move].move['name']}</li>)
+            }
+        </ul>
+    </div>;
+
 function PokemonMoves() {
 
     const [pokemonData, setPokemonData] = useState(null);
@@ -17,17 +27,10 @@ function PokemonMoves() {
         });
     }, []);
 
+    // (pokemonData ? (<Moves pokemonData={pokemonData}/>) : (null));
+
     if (pokemonData) {
-        return (
-        <div>
-            <p>{pokemonData.name}'s moves:</p>
-            <ul>
-                {
-                    Object.keys(pokemonData.moves).map((move, key) => <li key={key}>{pokemonData.moves[move].move['name']}</li>)
-                }
-            </ul>
-        </div>
-        );
+       return (<Moves pokemonData={pokemonData}/>)
     } else {
         return null;
     }
